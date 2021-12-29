@@ -3,6 +3,6 @@ package org.devops
 
 def pullcode(url) {
 
-   sh "echo ${url}"
+   echo "REPO: ${url}"
 
 }
