@@ -1,4 +1,4 @@
-def call() {
-    sh "echo hello"
+def info(message) {
+    echo "INFO: ${message}"
 }
 
