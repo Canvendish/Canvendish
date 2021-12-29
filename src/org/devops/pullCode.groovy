@@ -1,9 +1,8 @@
 package org.devops
 
 
-def pullcode(url){
+def pullcode(url) {
 
    sh "echo ${url}"
-
 
 }
