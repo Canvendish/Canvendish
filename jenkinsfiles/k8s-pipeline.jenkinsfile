@@ -1,0 +1,55 @@
+pipeline{
+    agent{
+        kubernetes{
+            cloud 'kubernetes'
+            yaml '''
+---
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  labels:
+    jenkins: "slave"
+  name: "jenkins-agent"
+  namespace: "jenkins"
+spec:
+  containers:
+  - env:
+    - name: "JENKINS_AGENT_WORKDIR"
+      value: "/home/jenkins/agent"
+    image: "192.168.0.184:8082/easzlab/inbound-agent:latest"
+    imagePullPolicy: "IfNotPresent"
+    name: "jnlp"
+    ports:
+    - containerPort: 50000
+      hostPort: 50000
+      name: "agent"
+    volumeMounts:
+    - mountPath: "/home/jenkins/agent"
+      name: "workspace-volume"
+      readOnly: false
+  hostNetwork: false
+  nodeSelector:
+    kubernetes.io/os: "linux"
+  restartPolicy: "Never"
+  securityContext:
+    runAsGroup: 0
+    runAsUser: 0
+  serviceAccountName: "jenkins-sa"
+  volumes:
+    - name: workspace-volume
+      hostPath:
+        path: /data/devops/jenkins/workspace
+        type: DirectoryOrCreate
+    
+'''
+        }
+    }
+
+	stages{
+		stage('Git Checkout'){
+			steps{
+				echo "123"
+			}        		
+		}
+	}
+}
