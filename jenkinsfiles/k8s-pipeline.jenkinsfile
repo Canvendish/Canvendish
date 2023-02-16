@@ -42,7 +42,7 @@ spec:
         type: DirectoryOrCreate
     
 '''
-        }
+        	}
 	}
 	options {
         timestamps()  //日志会有时间
