@@ -1,8 +1,12 @@
 package org.devops
 
 
-def pullcode(url) {
+def getcode(url,branchName) {
 
-   echo "REPO: ${url}"
+    checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], 
+               doGenerateSubmoduleConfigurations: false, 
+               extensions: [], 
+               submoduleCfg: [], 
+               userRemoteConfigs: [[credentialsId: 'gitlab-admin-user', url: "${url}"]]])
 
 }
