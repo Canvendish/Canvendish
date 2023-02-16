@@ -29,7 +29,10 @@ String branchName = "master"
 pipeline {
     agent { node { label "master"}}
     
-    
+    options{
+        timestamps()
+        skipDefaultCheckout()
+    }
     stages{
 
         stage("CheckOut"){
