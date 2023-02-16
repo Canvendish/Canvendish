@@ -7,6 +7,6 @@ def getcode(url,branchName) {
                doGenerateSubmoduleConfigurations: false, 
                extensions: [], 
                submoduleCfg: [], 
-               userRemoteConfigs: [[credentialsId: 'gitlab-admin-user', url: "${url}"]]])
+               userRemoteConfigs: [[credentialsId: '2c7be412-4d09-4476-bcda-ddb20d1f2142', url: "${url}"]]])
 
 }
