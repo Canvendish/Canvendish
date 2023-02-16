@@ -48,8 +48,8 @@ pipeline{
             steps{
                 script{
                 
-                    tools.PrintMes("执行打包","green")
-                    build.Build(buildType,buildShell)
+                    //tools.PrintMes("执行打包","green")
+                    //build.Build(buildType,buildShell)
                     //artifactory.main(buildType,buildShell)
                     //artifactory.PushArtifact()
                     
