@@ -35,11 +35,11 @@ pipeline{
              
                     println("${branchName}")
                     tools.PrintMes("获取代码","green")
-                    checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], 
-                                      doGenerateSubmoduleConfigurations: false, 
-                                      extensions: [], 
-                                      submoduleCfg: [], 
-                                      userRemoteConfigs: [[credentialsId: 'gitlab-admin-user', url: "${srcUrl}"]]])
+                    //checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], 
+                      //                doGenerateSubmoduleConfigurations: false, 
+                        //              extensions: [], 
+                          //            submoduleCfg: [], 
+                            //          userRemoteConfigs: [[credentialsId: 'gitlab-admin-user', url: "${srcUrl}"]]])
 
                 }
             }
