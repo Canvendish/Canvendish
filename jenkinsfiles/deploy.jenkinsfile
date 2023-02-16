@@ -23,7 +23,7 @@ def tools = new org.devops.tools()
 //String artifactUrl = "${env.artifactUrl}"
 
 //pipeline
-pipeline{
+pipeline {
     agent { node { label "master"}}
     
     
@@ -68,4 +68,5 @@ pipeline{
                 }
             }
        }
+  }
 }
