@@ -22,7 +22,7 @@ String srcUrl = "http://112.86.227.152:8084/gitlab/jsch/test.git"
 //String buildShell = "${env.buildShell}"
 //String deployHosts = "${env.deployHosts}"
 //String srcUrl = "${env.srcUrl}"
-String branchName = "${env.branchName}"
+//String branchName = "${env.branchName}"
 //String artifactUrl = "${env.artifactUrl}"
 def runOps
 
