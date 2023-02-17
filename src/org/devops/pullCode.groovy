@@ -7,6 +7,6 @@ def getcode(url,branchName) {
                doGenerateSubmoduleConfigurations: false, 
                extensions: [], 
                submoduleCfg: [], 
-               userRemoteConfigs: [[credentialsId: '2c7be412-4d09-4476-bcda-ddb20d1f2142', url: "${url}"]]])
+               userRemoteConfigs: [[credentialsId: '48547a85-e4d1-46b2-ade5-6cdbacf8e8f2', url: "${url}"]]])
 
 }
