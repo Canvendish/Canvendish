@@ -24,7 +24,7 @@ String srcUrl = "http://112.86.227.152:8084/gitlab/jsch/test.git"
 //String srcUrl = "${env.srcUrl}"
 String branchName = "${env.branchName}"
 //String artifactUrl = "${env.artifactUrl}"
-def runOps
+//def runOps
 
 userEmail = "591837974@qq.com"
 branchName = branch - "refs/heads/"
