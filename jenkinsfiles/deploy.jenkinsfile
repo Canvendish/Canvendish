@@ -26,14 +26,11 @@ String branchName = "${env.branchName}"
 //String artifactUrl = "${env.artifactUrl}"
 def runOps
 
-
 userEmail = "591837974@qq.com"
-if ("${runOps}" =="gitPush"){
-    branchName = branch - "refs/heads/"
-    currentBuild.description = "Trigger by ${username} ${branchName}"
-    //gitlab.ChangeCommitStatus(projectId,commitSha,"running")
-    env.runOpts = "gitPush"
-}
+branchName = branch - "refs/heads/"
+currentBuild.description = "Trigger by ${username} ${branchName}"
+//gitlab.ChangeCommitStatus(projectId,commitSha,"running")
+
 
 //pipeline
 pipeline {
