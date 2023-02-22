@@ -102,12 +102,12 @@ pipeline {
             
             }
         }
-        /*failure{
+        failure{
             script{
                 println("failure")
-                if ("${runOpts}" == "GitlabPush"){
+                //if ("${runOpts}" == "GitlabPush"){
                     //gitlab.ChangeCommitStatus(projectId,commitSha,"failed")
-                }
+                //}
                 toemail.Email("流水线失败了！",userEmail)
             }
         }
@@ -115,14 +115,14 @@ pipeline {
         aborted{
             script{
                 println("aborted")
-                if ("${runOpts}" == "GitlabPush"){
-                    gitlab.ChangeCommitStatus(projectId,commitSha,"canceled")
-                }
+                //if ("${runOpts}" == "GitlabPush"){
+                    //gitlab.ChangeCommitStatus(projectId,commitSha,"canceled")
+                //}
                toemail.Email("流水线被取消了！",userEmail)
             }
         
         }
     
-    }*/
+    }
  }
 }
