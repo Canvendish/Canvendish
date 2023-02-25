@@ -20,17 +20,17 @@ spec:
     imagePullPolicy: "IfNotPresent"
     name: "jnlp"
     ports:
-    - containerPort: 50000
-      hostPort: 50000
-      name: "agent"
+    #- containerPort: 50000
+      #hostPort: 50000
+      #name: "agent"
     volumeMounts:
     - mountPath: "/home/jenkins/agent"
       name: "workspace-volume"
       readOnly: false
-  hostNetwork: false
+  #hostNetwork: false
   nodeSelector:
     kubernetes.io/os: "linux"
-  restartPolicy: "Never"
+  #restartPolicy: "Never"
   securityContext:
     runAsGroup: 0
     runAsUser: 0
