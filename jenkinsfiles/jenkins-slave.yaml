@@ -18,6 +18,13 @@ spec:
       value: build01
     image: "192.168.0.184:8082/easzlab/inbound-agent:latest"
     imagePullPolicy: "IfNotPresent"
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 2Gi
+      requests:
+        cpu: 500m
+        memory: 512Mi
     name: "jnlp"
     ports:
     #- containerPort: 50000
