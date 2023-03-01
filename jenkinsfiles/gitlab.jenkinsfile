@@ -1,0 +1,50 @@
+#!groovy
+
+@Library('jenkinslibrary@master') _
+
+//func from shareLibrary
+def build = new org.devops.build()
+//def deploy = new org.devops.deploy()
+def tools = new org.devops.tools()
+def checkout = new org.devops.pullCode()
+def gitlab = new org.devops.gitlab()
+def toemail = new org.devops.toemail()
+//def sonar = new org.devops.sonarqube()
+//def sonarapi = new org.devops.sonarapi()
+def nexus = new org.devops.nexus()
+//def artifactory = new org.devops.artifactory() 
+
+
+//env
+String srcUrl = "http://112.86.227.152:8084/gitlab/jsch/test.git"
+//String branchName = "master"
+//String buildType = "${env.buildType}"
+//String buildShell = "${env.buildShell}"
+//String deployHosts = "${env.deployHosts}"
+//String srcUrl = "${env.srcUrl}"
+String branchName = "${env.branchName}"
+//String artifactUrl = "${env.artifactUrl}"
+//def runOps
+
+userEmail = "591837974@qq.com"
+branchName = branch - "refs/heads/"
+currentBuild.description = "Trigger by ${username} ${branchName}"
+//gitlab.ChangeCommitStatus(projectId,commitSha,"running")
+
+
+//pipeline
+pipeline {
+    agent { node { label "master"}}
+    
+    options{
+        timestamps()
+        skipDefaultCheckout()
+    }
+    stages{
+       stage("gitlab"){
+         tools.PrintMes("获取yaml文件","green")
+         response = gitlab.GetRepoFile(7,"demo-uat.yaml")
+         println(response)
+       }
+  }
+}
